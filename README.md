@@ -53,3 +53,63 @@ Copy the files in `dist` to `uk-cathedral-plotter-backend/public/frontend`
 ```bash
 mv dist/* ../uk-cathedral-plotter-backend/public/frontend
 ```
+
+# Step-by-step: Locally running frontend and backend
+
+## Backend
+
+Clone the `uk-cathedral-plotter-backend` to your local system.
+
+```bash
+git clone git@github.com:r-rayns/uk-cathedral-plotter-backend.git
+```
+
+Change to the `uk-cathedral-plotter-backend` directory and install the dependencies.
+
+```bash
+cd uk-cathedral-plotter-backend
+npm install
+```
+
+Create a `.env` file at the root of the project.
+
+```bash
+touch .env
+```
+
+Once created, copy and paste the following into the `.env` file:
+
+```yaml
+# The port number the server should run on (default 9212)
+PORT=9212
+```
+
+Start the backend server in `development` mode:
+
+```bash
+npm run dev
+```
+
+## Frontend
+
+Clone the `uk-cathedral-plotter-frontend` to your local system.
+
+```bash
+git clone git@github.com:r-rayns/uk-cathedral-plotter-frontend.git
+```
+
+Change to the `uk-cathedral-plotter-frontend` directory and install the dependencies.
+
+```bash
+cd uk-cathedral-plotter-frontend
+npm install
+```
+
+Start the frontend:
+
+```bash
+npm start
+```
+
+The frontend should then be running on port 3000, and you should be able to open a browser to see the app running at:
+`http://localhost:3000/`.
