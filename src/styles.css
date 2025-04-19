@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+body {
+  @apply m-0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1 {
+  @apply
+  text-2xl
+  md:text-4xl
+  font-bold
+  py-2
+  md:py-3;
+}
+
+h2 {
+  @apply
+  text-lg
+  my-2
+  font-bold
+}
+
+h3 {
+  @apply
+  text-base
+  font-bold
+  my-1;
+}
+
+h4 {
+  @apply
+  text-base
+  font-semibold
+  my-1;
+}
