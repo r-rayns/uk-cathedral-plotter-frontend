@@ -32,7 +32,6 @@ export default function CathedralMap() {
       } catch (err) {
         console.error('Unexpected error fetching cathedral data')
       } finally {
-        console.log('no longer loading');
         setIsLoading(false);
       }
     };

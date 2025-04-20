@@ -24,18 +24,20 @@ export function getDenominationColour(denomination: string) {
   return colour;
 }
 
+/**
+ * Constructs a complete URL for API requests for the given API path.
+ * In dev, it constructs the URL using the API URL from environment variables.
+ * In production mode, it constructs a relative URL.
+ */
 export function constructUrl(apiPath: string): string {
-  /**
-   * "import.meta.env.DEV" is a built-in env var set by Vite:
-   * https://vite.dev/guide/env-and-mode.html#env-variables
-   */
+  // "import.meta.env.DEV" is a built-in env var set by Vite: https://vite.dev/guide/env-and-mode.html#env-variables
   const isDev = import.meta.env.DEV;
-  let currentUrl = "";
-  if (isDev) {
-    currentUrl = import.meta.env.VITE_API_URL ?? "http://localhost:9212";
-  } else if (typeof window !== "undefined") {
-    currentUrl = window.location.origin;
-  }
   const cleanPath = apiPath.startsWith('/') ? apiPath.slice(1) : apiPath;
-  return `${currentUrl}/api/${cleanPath}`;
+  if (isDev) {
+    const baseUrl: string = import.meta.env.VITE_API_URL ?? "http://localhost:9212";
+    return `${baseUrl}/api/${cleanPath}`;
+  }
+
+  // Use a relative path in production
+  return `./api/${cleanPath}`;
 }

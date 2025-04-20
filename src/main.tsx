@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals.ts'
 const router = createRouter({
   routeTree,
   context: {},
+  basepath: import.meta.env.VITE_BASE_PATH || '/',
   defaultPreload: 'intent',
   scrollRestoration: true,
   defaultStructuralSharing: true,
@@ -31,7 +32,7 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
     </StrictMode>,
   )
 }
