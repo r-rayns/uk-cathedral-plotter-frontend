@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <header
-        className=" text-center bg-slate-800 text-white">
+        className=" text-center bg-slate-800 text-white py-2">
         <h1>UK Cathedral Plotter</h1>
       </header>
       <div className="grow">

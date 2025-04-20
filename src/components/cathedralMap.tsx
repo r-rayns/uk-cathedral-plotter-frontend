@@ -45,10 +45,10 @@ export default function CathedralMap() {
 
     setCathedralLegend(orderedDenominations
       .map(denomination => ( {
-          label: <span className="text-sm">{denomination}</span>,
+          label: <span className="text-xs md:text-sm">{denomination}</span>,
           icon: <PlaceOfWorshipIcon
             fill={getDenominationColour(denomination)}
-            className="w-6 h-6"
+            className="w-4 h-4 md:w-6 md:h-6"
             title={`Legend icon for (denomination: ${denomination})`}/>
         } )
       ));
@@ -66,7 +66,7 @@ export default function CathedralMap() {
                       zoom={13}
                       style={{height: "100%", width: "100%"}}>
 
-          <SetMapBoundsToMarkers markers={cathedrals}/>
+          <SetMapBoundsToMarkers markers={cathedrals} padding={{x: 15, y: 15}}/>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

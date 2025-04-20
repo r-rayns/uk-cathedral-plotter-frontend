@@ -4,8 +4,8 @@ import type { ReactNode } from 'react';
 export function MapLegend({entries, position}: MapLegendProps) {
 
   return (
-    <section className={["leaflet-control backdrop-blur-sm bg-white/50 m-4 p-4", ...position].join(' ')}>
-      <h3>Legend</h3>
+    <section className={["leaflet-control backdrop-blur-sm bg-white/50 m-2 md:m-4 p-2 md:p-4", ...position].join(' ')}>
+      <h4 className="my-0">Legend</h4>
       <div className="flex flex-col gap-2">
         {entries.map(({label, icon}, index) => (
           <div key={index} className="flex items-center gap-2">
