@@ -37,3 +37,7 @@ h4 {
   text-base
   font-semibold
 }
+
+.scroll-gutter-stable {
+  scrollbar-gutter: stable;
+}
