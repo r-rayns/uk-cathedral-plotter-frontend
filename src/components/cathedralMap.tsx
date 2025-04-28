@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import type { Cathedral } from '@/models/cathedrals.ts';
-import type { MapLegendEntry } from '@/components/mapLegend.tsx';
+import type { MapLegendEntry } from '@/components/map-controls/mapLegend.tsx';
+import { MapLegend } from '@/components/map-controls/mapLegend.tsx';
 import type { ApiResponse } from '@/models/api-response.ts';
 import CathedralMarker from '@/components/cathedralMarker.tsx';
 import { SetMapBoundsToMarkers } from '@/utils/setMapBoundsToMarkers.tsx';
-import { MapLegend } from '@/components/mapLegend.tsx';
-import { LeafletPositionClass } from '@/models/leaflet.ts';
 import { constructUrl, getDenominationColour } from '@/utils/helpers.tsx';
 import { PlaceOfWorshipIcon } from '@/components/icons/placeOfWorshipIcon.tsx';
+import { MapControl } from '@/components/mapControl.tsx';
 
 
 export default function CathedralMap() {
@@ -71,8 +71,9 @@ export default function CathedralMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <MapLegend position={[LeafletPositionClass.TOP, LeafletPositionClass.RIGHT]}
-                     entries={cathedralLegend}/>
+          <MapControl position="topright" disableClickPropagation={true}>
+            <MapLegend entries={cathedralLegend}/>
+          </MapControl>
           {cathedrals.map((cathedral, index) => (
             <CathedralMarker key={index}
                              cathedral={cathedral}/>
